@@ -1,0 +1,13 @@
+# Site settings
+title: CI and CD with GitHub
+description: A demo blog
+email: stefan@github.com
+twitter_username: me_stoe
+github_username:  stoe
+baseurl:
+url: 
+destination: site_content
+exclude: [ 'vendor' ]
+
+# Build settings
+markdown: kramdown

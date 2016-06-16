@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.2.2
+
+# speed up builds
+cache: bundler
+
+# invoke this script instead of rake (the Travis default)
+script: script/cibuild
+
+# do not email results of every build
+notifications:
+  email: false

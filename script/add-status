@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Usage: add-status <sha>
+
+set -e
+
+curl -H "Authorization: token $STOE_SCRIPT_TOKEN" \
+  https://api.github.com/repos/stoe/ci-cd-workshop/statuses/"$1" \
+  -d '{"state": "pending", "target_url": "https://google.com", "description": "example", "context": "demo statuses API"}'

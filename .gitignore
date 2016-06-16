@@ -1,0 +1,10 @@
+# Jekyll ignores this by default
+_site
+.sass-cache
+.jekyll-metadata
+
+# ignore generated static content
+.bundle/
+bin/
+site_content/
+vendor/

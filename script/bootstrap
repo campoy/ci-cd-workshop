@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+# github/strap related bootstrapping
+if [ "$(uname -s)" = "Darwin" ]; then
+  brew update >/dev/null
+  brew bundle check &>/dev/null || brew bundle
+
+  brew bootstrap-rbenv-ruby
+
+  BUNDLE="brew bundle exec -- bundle"
+else
+  BUNDLE="bundle"
+fi
+
+echo "==> Installing gem dependencies…"
+
+bundle check --path vendor/gems 2>&1 > /dev/null || {
+  $BUNDLE install --binstubs bin --path vendor/gems
+}
